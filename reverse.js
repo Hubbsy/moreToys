@@ -7,7 +7,7 @@ function reversal(string) {
     // // console.log(result);
     // return result; 
 
-     let newString = string.split('').reverse().join("")
+    let newString = string.split('').reverse().join("")
     return newString
 }
 
