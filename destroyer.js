@@ -17,9 +17,11 @@
 
 
 function destroyer(arr) {
-    let args = [...arguments];
-    console.log(args);
-  
+    let args = [...arguments].slice(1);
+    return arr.filter(num => {
+        return !args.includes(num)
+    })
+    
 }
 
-destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
