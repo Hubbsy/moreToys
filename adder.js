@@ -16,10 +16,10 @@
 //   for (let i = 0; i < len; i++) {
 //   //nest an inner loop starting at index 1
 //     let firstValue = arr[i];
-//     for (let j = 1; j < len; j++) {
+//     for (let j = 0; j < len; j++) {
 //   //check if the value in the outer loop plus the value in the inner loop adds to k
 //     let secondValue = arr[j];
-//       if (firstValue + secondValue === k && firstValue !== secondValue) {
+//     if (firstValue + secondValue === k && firstValue !== secondValue) {
 //   //if true return true
 //         return true; 
 //       }
@@ -28,17 +28,20 @@
 //   //return false
 //   return false; 
 // }
+
+
 const adder = (arr, k) => {
-  let i = 1
-  return arr.reduce(num => {
-    if ((num + num[i]) === 17) {
+  let numSet = new Set(arr);
+  let len = arr.length; 
+  for (let i = 0; i < len; i++) {
+    if (numSet.has(k - arr[i])) {
       return true; 
     }
-  }, 0)
+  }
   return false; 
 }
 
 
-console.log(adder([10, 15, 3, 7], 17)) // should return true since 10 + 7 is 17
+console.log(adder([7, 15, 3, 10], 17)) // should return true since 10 + 7 is 17
 console.log(adder([10, 15, 5, 7], 10)) // should return false
-console.log(adder([10, 15, 3, 7], 17))
+console.log(adder([10, 15, 3, 7, 5, 8], 8)) //should return true
