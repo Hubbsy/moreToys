@@ -23,7 +23,7 @@ function pairElement(str) {
   //split the array into each letter
   let lettersArray = str.split('');
   //iterate throug the letters array
-  // console.log(lettersArray)
+  console.log(lettersArray)
   lettersArray.map(letter => {
     let pairs = []
     if (letter === "G") {
